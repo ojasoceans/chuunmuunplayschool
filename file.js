@@ -149,47 +149,137 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //   TIMINGS
+// document.addEventListener("DOMContentLoaded", () => {
+//     const statusBadge = document.getElementById("statusBadge");
+//     const holidayList = document.getElementById("holidayList");
+
+//     const now = new Date();
+//     const day = now.getDay(); // 0 = Sunday
+//     const hour = now.getHours();
+//     const todayStr = now.toISOString().split("T")[0];
+
+//     const holidays = [
+//         { date: "2025-04-14", name: "Ambedkar Jayanti" },
+//         { date: '2025-05-01', name: 'Labour Day' },
+//         { date: '2025-08-15', name: 'Independence Day' },
+//         { date: '2025-10-02', name: 'Gandhi Jayanti' },
+//         { date: '2025-12-25', name: 'Christmas Day' },
+//     ];
+
+//     // Populate Holiday List
+//     holidays.forEach((h) => {
+//         const li = document.createElement("li");
+//         li.innerHTML = `<strong>${h.name}</strong> – ${new Date(
+//             h.date
+//         ).toDateString()}`;
+//         holidayList.appendChild(li);
+//     });
+
+//     // Check if today is a national holiday
+//     const isHolidayToday = holidays.some((h) => h.date === todayStr);
+
+//     // Logic for "Open Now" / "Closed"
+//     let isOpen = false;
+//     if (!isHolidayToday && day !== 0 && hour >= 9 && hour < 13) {
+//         isOpen = true;
+//     }
+
+//     statusBadge.innerHTML = isOpen
+//         ? '<img src="images/open.png" class="inline h-5 mr-2">Open Now'
+//         : '<img src="images/closed.png" class="inline h-5 mr-2">Closed Now';
+
+//     statusBadge.classList.add(isOpen ? "bg-green-500" : "bg-red-500");
+// });
 document.addEventListener("DOMContentLoaded", () => {
-    const statusBadge = document.getElementById("statusBadge");
-    const holidayList = document.getElementById("holidayList");
+  const statusBadge = document.getElementById("statusBadge");
+  const holidayList = document.getElementById("holidayList");
+  const holidayTitle = document.getElementById("holidayTitle");
 
-    const now = new Date();
-    const day = now.getDay(); // 0 = Sunday
-    const hour = now.getHours();
-    const todayStr = now.toISOString().split("T")[0];
+  const now = new Date();
+  const todayStr = now.toISOString().split("T")[0];
+  const day = now.getDay(); // 0 = Sunday
+  const hour = now.getHours();
+  const currentDate = now.getDate();
+  const currentMonth = now.getMonth(); // 0 = January
 
-    const holidays = [
-        { date: "2025-04-14", name: "Ambedkar Jayanti" },
-        // { date: '2025-05-01', name: 'Labour Day' },
-        // { date: '2025-08-15', name: 'Independence Day' },
-        // { date: '2025-10-02', name: 'Gandhi Jayanti' },
-        // { date: '2025-12-25', name: 'Christmas Day' },
-    ];
+  // Summer Vacation: closed till 29th June
+  const isSummerVacation = currentMonth === 5 && currentDate <= 29;
 
-    // Populate Holiday List
-    holidays.forEach((h) => {
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>${h.name}</strong> – ${new Date(
-            h.date
-        ).toDateString()}`;
-        holidayList.appendChild(li);
+  // National holidays list
+  const holidays = [
+    { date: "2025-07-06", name: "Muharram" },
+    { date: "2025-08-15", name: "Independence Day" },
+    { date: "2025-08-27", name: "Ganesh Chaturthi" },
+    { date: "2025-09-29", name: "Dussehra (Saptmi)" },
+    { date: "2025-10-02", name: "Gandhi Jayanti / Dussehra" },
+    { date: "2025-10-20", name: "Choti Diwali" },
+    { date: "2025-10-21", name: "Diwali" },
+    { date: "2025-10-22", name: "Govardhan Puja" },
+    { date: "2025-10-23", name: "Bhai Dooj" },
+    { date: "2025-10-28", name: "Chhath Puja" },
+    { date: "2025-11-05", name: "Guru Nanak Jayanti" },
+    { date: "2025-12-25", name: "Christmas Day" },
+  ];
+
+  // Filter future holidays
+  const upcomingHolidays = holidays
+    .filter(h => h.date >= todayStr)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  // Clear list before populating
+  holidayList.innerHTML = "";
+
+  // If there are upcoming holidays, show only the next one
+  if (upcomingHolidays.length > 0) {
+    const next = upcomingHolidays[0];
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${next.name}</strong> – ${new Date(next.date).toDateString()}`;
+    holidayList.appendChild(li);
+
+    // Optionally show a clickable element to view all holidays (extendable)
+    const expandBtn = document.createElement("button");
+    expandBtn.innerText = "Show All Holidays";
+    expandBtn.className = "mt-2 text-blue-500 text-sm";
+    holidayList.appendChild(expandBtn);
+
+    const fullList = document.createElement("ul");
+    fullList.className = "mt-2 text-sm space-y-1 hidden";
+    upcomingHolidays.forEach(h => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${h.name}</strong> – ${new Date(h.date).toDateString()}`;
+      fullList.appendChild(li);
     });
+    holidayList.appendChild(fullList);
 
-    // Check if today is a national holiday
-    const isHolidayToday = holidays.some((h) => h.date === todayStr);
+    expandBtn.addEventListener("click", () => {
+      fullList.classList.toggle("hidden");
+      expandBtn.innerText = fullList.classList.contains("hidden") ? "Show All Holidays" : "Hide Holidays";
+    });
+  } else {
+    holidayList.innerHTML = "<li>No upcoming holidays.</li>";
+  }
 
-    // Logic for "Open Now" / "Closed"
-    let isOpen = false;
-    if (!isHolidayToday && day !== 0 && hour >= 9 && hour < 13) {
-        isOpen = true;
-    }
+  // Determine open status
+  const isHolidayToday = holidays.some(h => h.date === todayStr);
+  let isOpen = false;
 
-    statusBadge.innerHTML = isOpen
-        ? '<img src="images/open.png" class="inline h-5 mr-2">Open Now'
-        : '<img src="images/closed.png" class="inline h-5 mr-2">Closed Now';
+  if (isSummerVacation) {
+    isOpen = false;
+  } else if (!isHolidayToday && day !== 0 && hour >= 9 && hour < 13) {
+    isOpen = true;
+  }
 
-    statusBadge.classList.add(isOpen ? "bg-green-500" : "bg-red-500");
+  // Set status badge
+  statusBadge.innerHTML = isOpen
+    ? '<img src="images/open.png" class="inline h-5 mr-2">Open Now'
+    : isSummerVacation
+    ? '<img src="images/closed.png" class="inline h-5 mr-2">Closed for Summer Vacations (Till- 29th June, 2025)'
+    : '<img src="images/closed.png" class="inline h-5 mr-2">Closed Now';
+
+  statusBadge.classList.add(isOpen ? "bg-green-500" : "bg-red-500");
 });
+
+
 
 // Lottie Hero Animation
 // document.addEventListener("DOMContentLoaded", () => {

@@ -39,3 +39,6 @@ html {
 .glider-track {
     gap: 1rem;
   }
+  .hidden {
+  display: none;
+}
