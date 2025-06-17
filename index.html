@@ -35,87 +35,87 @@
 <body x-data="{ navOpen: false }" class="bg-gradient-to-br from-pink-100 via-yellow-50 to-blue-100 font-sans">
 
   <!-- NAVBAR -->
-        <header class="bg-white shadow-md fixed top-0 w-full z-50">
-          <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="text-xl font-bold text-pink-600"><img src="images/logo.png" alt="" class="w-40 h-15"></div>
+  <header class="bg-white shadow-md fixed top-0 w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="text-xl font-bold text-pink-600"><img src="images/logo.png" alt="" class="w-40 h-15"></div>
 
-            <!-- Hamburger Button -->
-            <button @click="navOpen = !navOpen" class="md:hidden text-pink-600 focus:outline-none" aria-label="Toggle Menu">
-              <svg x-show="!navOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+      <!-- Hamburger Button -->
+      <button @click="navOpen = !navOpen" class="md:hidden text-pink-600 focus:outline-none" aria-label="Toggle Menu">
+        <svg x-show="!navOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
-              <a href="#about" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">About</a>
-              <a href="#activities" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Activities</a>
-              <a href="#services" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Services</a>
-              <a href="#gallery" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Gallery</a>
-              <a href="#testimonials" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Testimonials</a>
-              <a href="#timings" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Timings</a>
-              <a href="#contact"
-                class="bg-yellow-300 text-yellow-900 px-4 py-2 rounded-full shadow-md hover:bg-yellow-400">Contact</a>
-            </nav>
-          </div>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <a href="#about" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">About</a>
+        <a href="#activities" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Activities</a>
+        <a href="#services" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Services</a>
+        <a href="#gallery" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Gallery</a>
+        <a href="#testimonials" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Testimonials</a>
+        <a href="#timings" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Timings</a>
+        <a href="#contact"
+          class="bg-yellow-300 text-yellow-900 px-4 py-2 rounded-full shadow-md hover:bg-yellow-400">Contact</a>
+      </nav>
+    </div>
 
-          <!-- Mobile Menu -->
-          <div x-show="navOpen" x-transition
-            class="md:hidden bg-white shadow-lg py-4 px-6 space-y-4 text-gray-700 font-medium text-center">
-            <a href="#about" @click="navOpen = false"
-              class="block text-pink-600 font-semibold hover:text-yellow-500">About</a>
-            <a href="#activities" @click="navOpen = false"
-              class="block text-pink-600 font-semibold hover:text-yellow-500">Activities</a>
-            <a href="#services" @click="navOpen = false"
-              class="block text-pink-600 font-semibold hover:text-yellow-500">Services</a>
-            <a href="#gallery" @click="navOpen = false"
-              class="block text-pink-600 font-semibold hover:text-yellow-500">Gallery</a>
-            <a href="#testimonials" @click="navOpen = false"
-              class="block text-pink-600 font-semibold hover:text-yellow-500">Testimonials</a>
-            <a href="#timings" @click="navOpen = false"
-              class="block text-pink-600 font-semibold hover:text-yellow-500">Timings</a>
-            <a href="#contact" @click="navOpen = false"
-              class="block bg-yellow-300 text-yellow-900 px-4 py-2 rounded-full shadow-md hover:bg-yellow-400"">Contact</a>
+    <!-- Mobile Menu -->
+    <div x-show="navOpen" x-transition
+      class="md:hidden bg-white shadow-lg py-4 px-6 space-y-4 text-gray-700 font-medium text-center">
+      <a href="#about" @click="navOpen = false"
+        class="block text-pink-600 font-semibold hover:text-yellow-500">About</a>
+      <a href="#activities" @click="navOpen = false"
+        class="block text-pink-600 font-semibold hover:text-yellow-500">Activities</a>
+      <a href="#services" @click="navOpen = false"
+        class="block text-pink-600 font-semibold hover:text-yellow-500">Services</a>
+      <a href="#gallery" @click="navOpen = false"
+        class="block text-pink-600 font-semibold hover:text-yellow-500">Gallery</a>
+      <a href="#testimonials" @click="navOpen = false"
+        class="block text-pink-600 font-semibold hover:text-yellow-500">Testimonials</a>
+      <a href="#timings" @click="navOpen = false"
+        class="block text-pink-600 font-semibold hover:text-yellow-500">Timings</a>
+      <a href="#contact" @click="navOpen = false"
+        class="block bg-yellow-300 text-yellow-900 px-4 py-2 rounded-full shadow-md hover:bg-yellow-400"">Contact</a>
           </div>
         </header>
   
 <!-- HERO SECTION -->
         <section id=" home" class="relative text-center py-20 top-20">
-          <div class="absolute inset-0 z-0">
-            <div class="w-40 h-40 bg-pink-300 rounded-full opacity-50 blur-2xl animate-float absolute top-0 left-0"></div>
-            <div class="w-56 h-56 bg-yellow-200 rounded-full opacity-50 blur-2xl animate-float absolute top-20 left-2/3">
-            </div>
+        <div class="absolute inset-0 z-0">
+          <div class="w-40 h-40 bg-pink-300 rounded-full opacity-50 blur-2xl animate-float absolute top-0 left-0"></div>
+          <div class="w-56 h-56 bg-yellow-200 rounded-full opacity-50 blur-2xl animate-float absolute top-20 left-2/3">
           </div>
-          <div class="relative z-10">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-pink-600 drop-shadow-lg" x-show="show" x-transition>
-              Welcome to
-            </h1>
+        </div>
+        <div class="relative z-10">
+          <h1 class="text-5xl md:text-6xl font-extrabold text-pink-600 drop-shadow-lg" x-show="show" x-transition>
+            Welcome to
+          </h1>
 
-            <!-- school name -->
-            <h1 class="mt-5 mb-5 text-5xl md:text-6xl font-extrabold text-pink-600 drop-shadow-lg" x-show="show"
-              x-transition>
-              <span class="text-red-500">CH</span>
-              <span class="-ml-4 text-yellow-500">UU</span>
-              <span class="-ml-4 text-blue-500">NM</span>
-              <span class="-ml-4 text-yellow-500">UU</span>
-              <span class="-ml-4 text-green-500">N</span>
-              <span class="text-gray-700">Play School</span>!
-            </h1>
+          <!-- school name -->
+          <h1 class="mt-5 mb-5 text-5xl md:text-6xl font-extrabold text-pink-600 drop-shadow-lg" x-show="show"
+            x-transition>
+            <span class="text-red-500">CH</span>
+            <span class="-ml-4 text-yellow-500">UU</span>
+            <span class="-ml-4 text-blue-500">NM</span>
+            <span class="-ml-4 text-yellow-500">UU</span>
+            <span class="-ml-4 text-green-500">N</span>
+            <span class="text-gray-700">Play School</span>!
+          </h1>
 
-            <p class="mt-4 text-xl text-gray-700 font-medium" x-show="show" x-transition.delay.200ms>
-              A joyful place where little minds grow, play, and thrive.
-            </p>
-            <a href="#contact"
-              class="inline-block mt-6 px-8 py-3 bg-pink-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-pink-600 transform transition hover:scale-105"
-              x-show="show" x-transition.delay.400ms>
-              Enroll Now
-            </a>
-            <div id="lottie-hero" class="mx-auto mt-10 w-72 md:w-96" x-show="show" x-transition.delay.600ms></div>
-          </div>
+          <p class="mt-4 text-xl text-gray-700 font-medium" x-show="show" x-transition.delay.200ms>
+            A joyful place where little minds grow, play, and thrive.
+          </p>
+          <a href="#contact"
+            class="inline-block mt-6 px-8 py-3 bg-pink-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-pink-600 transform transition hover:scale-105"
+            x-show="show" x-transition.delay.400ms>
+            Enroll Now
+          </a>
+          <div id="lottie-hero" class="mx-auto mt-10 w-72 md:w-96" x-show="show" x-transition.delay.600ms></div>
+        </div>
         </section>
 
-<!-- ENROLLMENT BANNER with Sound, Sparkle, and Confetti -->
+        <!-- ENROLLMENT BANNER with Sound, Sparkle, and Confetti -->
         <section id="banner">
           <div class="fixed bottom-6 right-6 z-50 animate-bounce">
             <a id="enrollBtn" href="#contact" class="relative group block transform transition hover:scale-110">
@@ -136,12 +136,12 @@
               <div class="sparkle bottom-[-10px] left-[15px]"></div>
             </a>
           </div>
-  
+
           <audio id="hoverSound" src="audios/multi-pop-1-188165.mp3"></audio>
           <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
         </section>
 
-<!-- ABOUT US -->
+        <!-- ABOUT US -->
         <section id="about" class="py-16 bg-white text-center px-6">
           <h2 class="text-4xl font-bold text-pink-600 mb-4">About Us</h2>
           <p class="max-w-3xl mx-auto text-gray-700 text-lg text-justify">
@@ -194,7 +194,7 @@
         </section>
 
 
-<!-- ACTIVITIES -->
+        <!-- ACTIVITIES -->
         <section id="activities" class="py-16 text-center px-6 bg-yellow-50">
           <h2 class="text-4xl font-bold text-yellow-500 mb-6">Activities</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -207,7 +207,7 @@
           </div>
         </section>
 
-<!-- SERVICES -->
+        <!-- SERVICES -->
         <section id="services" class="py-16 text-center px-4 sm:px-6 bg-blue-50">
           <h2 class="text-4xl font-bold text-blue-500 mb-10">Our Services</h2>
 
@@ -222,11 +222,13 @@
           <h2 class="text-2xl font-bold text-blue-500 mt-12 mb-8">Additional Services</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto justify-center">
             <div class="p-6 bg-white rounded-xl shadow-lg">🕺 Dance Zone</div>
-            <a href="https://ojasoceans.github.io/thebrainees/"><div class="p-6 bg-white rounded-xl shadow-lg">🧠 The Braineez</div></a>
+            <a href="https://ojasoceans.github.io/thebrainees/">
+              <div class="p-6 bg-white rounded-xl shadow-lg">🧠 The Braineez</div>
+            </a>
           </div>
         </section>
 
-<!-- GALLERY -->
+        <!-- GALLERY -->
         <section id="gallery" class="py-16 bg-white text-center px-6">
           <h2 class="text-4xl font-bold text-pink-600 mb-6">Gallery</h2>
           <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
@@ -279,7 +281,7 @@
           </button>
         </section>
 
-<!-- TESTIMONIALS -->
+        <!-- TESTIMONIALS -->
         <section id="testimonials" class="py-16 text-center px-6 bg-yellow-50">
           <h2 class="text-4xl font-bold text-yellow-500 mb-6">What Parents Say</h2>
           <div id="google-reviews" class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -292,8 +294,8 @@
               View More
             </button>
             <a href=""><button class="mt-6 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition">
-            Google reviews
-          </button></a>
+                Google reviews
+              </button></a>
           </div>
 
           <!-- videos -->
@@ -314,11 +316,11 @@
             View More
           </button>
           <a href=""><button class="mt-6 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition">
-            YouTube Videos
-          </button></a>
+              YouTube Videos
+            </button></a>
         </section>
 
-<!-- TIMINGS -->
+        <!-- TIMINGS -->
         <section id="timings" class="py-16 bg-white text-center px-6">
           <div class="max-w-5xl mx-auto">
             <h2 class="text-4xl font-bold text-pink-600 mb-4">
@@ -356,7 +358,7 @@
           </div>
         </section>
 
-<!-- CONTACT -->
+        <!-- CONTACT -->
         <section id="contact" class="py-16 bg-blue-50 px-4 sm:px-6">
           <h2 class="text-3xl sm:text-4xl font-bold text-blue-500 text-center mb-10">
             Contact Us
@@ -431,7 +433,7 @@
           </div>
         </section>
 
-<!-- FOOTER -->
+        <!-- FOOTER -->
         <footer class="bg-pink-200 text-pink-800 text-center py-6 mt-auto border-t border-pink-300">
           <p class="font-medium">
             &copy; 2025 <span class="font-bold">Chuunmuun Play School</span>. All
@@ -445,6 +447,10 @@
 
 
         <script src="file.js"></script>
+        <script>
+          window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/speed-insights/script.js"></script>
 
 </body>
 
