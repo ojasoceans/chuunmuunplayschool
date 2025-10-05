@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ show: false }" x-init="setTimeout(() => show = true, 300)">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Chuunmuun Play School - nurturing little minds through joyful learning. Explore our activities, services, testimonials, and contact details." />
+    <meta name="keywords"
+        content="Chuunmuun, play school, playway, preschool, activities, Gorakhpur, kids education, early learning, Basharatpur, Ashok Nagar, Best playway in Gorakhpur" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Chuunmuun Play School" />
+    <meta property="og:description"
+        content="Nurturing little minds through joyful learning. Discover our services, events, and enroll now!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.chuunmuun.com" />
+    <meta property="og:image" content="https://www.chuunmuun.com/images/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chuunmuun Play School" />
+    <meta name="twitter:description"
+        content="Nurturing little minds through joyful learning. Discover our services, events, and enroll now!" />
+    <meta name="twitter:image" content="https://www.chuunmuun.com/images/og.jpg" />
+
+    <title>Chuunmuun Play School</title>
+
+    <link rel="icon" href="images/favicon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body x-data="{ navOpen: false }" class="bg-gradient-to-br from-pink-100 via-yellow-50 to-blue-100 font-sans">
+
+    <!-- NAVBAR -->
+    <header class="bg-white shadow-md fixed top-0 w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="text-xl font-bold text-pink-600"><img src="images/logo.png" alt="" class="w-40 h-15"></div>
+
+            <nav class="md:flex space-x-6 text-gray-700 font-medium">
+                <a href="/index.html" class="text-pink-600 font-semibold hover:text-yellow-500 py-2">Back</a>
+        </div>
+    </header>
+
+    <section id="gallery" class="pt-32 py-16 bg-white text-center px-6">
+        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            <img src="images/pic23.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic24.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic25.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic26.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic27.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic28.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic29.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic30.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic15.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic16.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic17.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic18.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic19.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic20.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic21.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic22.jpeg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic9.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic10.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic11.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic12.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic13.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic14.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic1.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic2.png" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic3.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic4.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic5.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic6.png" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic7.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+            <img src="images/pic8.jpg" alt="Gallery Image" class="rounded-xl h-48 w-full shadow-md object-cover" />
+        </div>
+    </section>
+
+    <script src="file.js"></script>
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+</body>
+
+</html>
