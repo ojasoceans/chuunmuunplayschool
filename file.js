@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// GALLERY ---> button removed
+// GALLERY ---> id removed
 const toggleBtn = document.getElementById('toggleGalleryBtn');
 const extraImages = document.querySelectorAll('.extra-images');
 let expanded = false;
